@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.globalista.fastchest.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "client": [
+    "BlockEntityRenderDispatcherMixin",
+    "ChestBlockMixin",
+    "EnderChestBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "fastchest.mixins.refmap.json"
+}
