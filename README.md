@@ -4,7 +4,7 @@ This is a port of [FastChest](https://github.com/FakeDomi/FastChest) by Domi fro
 
 If your storage room contains a lot of chests, you have probably noticed how bad Minecraft is at rendering them. The more chests are placed, the lower your FPS go.
 
-FastChest helps by removing their dynamic models (aka BlockEntityRenderer) and making them render as static chunk geometry, like most normal blocks. (This means they will lose their lid opening animation! Check out [Enhanced Block Entities](https://modrinth.com/mod/ebe) if you care about that.)
+FastChest helps by removing their dynamic models (aka BlockEntityRenderer) and making them render as static chunk geometry, like most normal blocks. (This means they will lose their lid opening animation!).
 
 Depending on how many chests you have around, you'll see varying effectiveness. In large storage rooms this mod can easily double your FPS, but keep in mind that chests aren't the only thing responsible for bad performance.
 
