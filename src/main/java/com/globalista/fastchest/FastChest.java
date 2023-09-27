@@ -8,9 +8,5 @@ import net.minecraftforge.fml.config.ModConfig;
 public class FastChest
 {
     public static final String MODID = "fastchest";
-
-    public FastChest()
-    {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-    }
+    public FastChest() {ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.SPEC);}
 }

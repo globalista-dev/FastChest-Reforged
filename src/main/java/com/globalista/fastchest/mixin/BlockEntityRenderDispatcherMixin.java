@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BlockEntityRenderDispatcherMixin {
 
     @Inject(method = "getRenderer", at = @At("HEAD"), cancellable = true)
-    private <E extends BlockEntity> void fastchest_get(E blockEntity, CallbackInfoReturnable<@Nullable BlockEntityRenderer<E>> cir) {
+    private <E extends BlockEntity> void fastchest_getRenderer(E blockEntity, CallbackInfoReturnable<@Nullable BlockEntityRenderer<E>> cir) {
         Class<?> beClass = blockEntity.getClass();
 
         if(Config.simplifiedChest){
