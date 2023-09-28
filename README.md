@@ -1,6 +1,6 @@
 # FastChest
 
-##[Check FastChest Reforged on CurseForge](https://www.curseforge.com/minecraft/mc-mods/fastchest-reforged)
+[##Check FastChest Reforged on CurseForge](https://www.curseforge.com/minecraft/mc-mods/fastchest-reforged)
 
 This is a port of [FastChest](https://github.com/FakeDomi/FastChest) by Domi from Fabric to Forge.
 
