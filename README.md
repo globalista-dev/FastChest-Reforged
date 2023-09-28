@@ -1,5 +1,7 @@
 # FastChest
 
+## [Check FastChest Reforged on CurseForge]([url](https://www.curseforge.com/minecraft/mc-mods/fastchest-reforged))
+
 This is a port of [FastChest](https://github.com/FakeDomi/FastChest) by Domi from Fabric to Forge.
 
 If your storage room contains a lot of chests, you have probably noticed how bad Minecraft is at rendering them. The more chests are placed, the lower your FPS go.
