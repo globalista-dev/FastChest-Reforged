@@ -1,5 +1,6 @@
-package com.globalista.fastchest;
+package com.globalista.fastchest.config;
 
+import com.globalista.fastchest.FastChest;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -14,7 +15,7 @@ public class Config
             .comment("Turn on fastchest")
             .define("simplifiedChest", true);
 
-    static final ForgeConfigSpec SPEC = BUILDER.build();
+    public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean simplifiedChest;
 

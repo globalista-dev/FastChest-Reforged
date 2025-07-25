@@ -1,7 +1,12 @@
 package com.globalista.fastchest.mixin;
 
-import com.globalista.fastchest.Config;
+import com.globalista.fastchest.FastChest;
+import com.globalista.fastchest.config.Config;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,6 +24,15 @@ public class ChestBlockMixin {
             cir.setReturnValue(RenderShape.MODEL);
         }
 
+    }
+
+    @Inject(method = "getTicker", at = @At("HEAD"), cancellable = true)
+    private <T extends BlockEntity> void removeTicker(Level world, BlockState state, BlockEntityType<T> type, CallbackInfoReturnable<BlockEntityTicker<T>> cir)
+    {
+        if (Config.simplifiedChest && state.is(FastChest.COMPATIBLE_CHEST_BLOCKS))
+        {
+            cir.setReturnValue(null);
+        }
     }
 
 

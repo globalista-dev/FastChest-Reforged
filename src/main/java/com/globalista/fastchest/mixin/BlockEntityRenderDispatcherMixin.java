@@ -1,8 +1,10 @@
 package com.globalista.fastchest.mixin;
 
-import com.globalista.fastchest.Config;
+import com.globalista.fastchest.FastChest;
+import com.globalista.fastchest.config.Config;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.entity.EnderChestBlockEntity;
@@ -21,11 +23,14 @@ public class BlockEntityRenderDispatcherMixin {
         Class<?> beClass = blockEntity.getClass();
 
         if(Config.simplifiedChest){
-            if (beClass == ChestBlockEntity.class ||
-                    beClass == TrappedChestBlockEntity.class ||
-                    beClass == EnderChestBlockEntity.class ||
-                    beClass.getSuperclass().getName().equals("io.github.cyberanner.ironchests.blocks.blockentities.GenericChestEntity"))
-            { cir.setReturnValue(null);}
+
+            if(blockEntity instanceof ChestBlockEntity
+                    || blockEntity instanceof TrappedChestBlockEntity
+                    || blockEntity instanceof EnderChestBlockEntity
+                    || blockEntity.getType().builtInRegistryHolder().is(FastChest.COMPATIBLE_CHEST_BLOCK_ENTITIES)) {
+                cir.setReturnValue(null);
+            }
+
         }
 
     }
